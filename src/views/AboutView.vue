@@ -3,7 +3,7 @@
     <div class="bg-white lg:w-1/6 md:w-1/4 h-screen fixed py-20 px-4 overflow-auto hidden md:block">
       <div class="mb-4">
         <p>檔案名稱</p>
-        <p>{{ file1.name }}</p>
+        <p>{{ signStores.pdfFile.name }}</p>
       </div>
       <hr>
 

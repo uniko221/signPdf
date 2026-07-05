@@ -7,12 +7,11 @@ const router = useRouter()
 const signStores = useSignStores()
 const fileInput = ref(null)
 
-// 觸發隱藏的 file input
 const triggerUpload = () => {
   fileInput.value.click()
 }
 
-// 處理檔案選取
+
 const handleHomeFile = (e) => {
   const file = e.target.files[0]
   if (!file) return
@@ -21,7 +20,7 @@ const handleHomeFile = (e) => {
   signStores.setPdfFile(file)
 
   // 跳轉到 About 頁面
-  router.push('/about') // 請根據你實際的路由路徑調整
+  router.push('/about')
 }
 </script>
 
@@ -40,7 +39,7 @@ const handleHomeFile = (e) => {
         <input type="file" ref="fileInput" accept="application/pdf" class="hidden" @change="handleHomeFile" />
 
         <button type="button" class="w-full p-6 mt-20 bg-light-main shadow-xl" @click="triggerUpload">
-          簽署新文件2
+          簽署新文件
         </button>
       </div>
 
