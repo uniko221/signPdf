@@ -2,9 +2,9 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: 'main' # 當 main 分支有 push 時觸發
+    branches:
+      - main # 當 main 分支有 push 時觸發自動部署
 
-# 設定權限
 permissions:
   contents: read
   pages: write
@@ -18,7 +18,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps: deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -42,7 +42,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist' 
+          path: './dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
